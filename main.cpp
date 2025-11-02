@@ -1,7 +1,11 @@
+// COMSC-210 | Lab 28 | Daniel Santisteban
+// IDE used: VS Code
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <list>
+#include <algorithm>
 #include "Goat.h"
 using namespace std;
 
@@ -18,12 +22,12 @@ int main() {
     bool again;
 
     // read & populate arrays for names and colors
-    ifstream fin("names.txt");
+    ifstream fin("C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-lab-28\\names.txt");
     string names[SZ_NAMES];
     int i = 0;
     while (fin >> names[i++]);
     fin.close();
-    ifstream fin1("colors.txt");
+    ifstream fin1("C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-lab-28\\colors.txt");
     string colors[SZ_COLORS];
     i = 0;
     while (fin1 >> colors[i++]);
