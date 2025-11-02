@@ -157,4 +157,5 @@ void remove_duplicates(list<Goat> &trip){
 }
 void sort_list(list<Goat> &trip){
     trip.sort();
+    
 }
