@@ -17,6 +17,7 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 void reverse_list(list<Goat> &trip);
 void remove_duplicates(list<Goat> &trip);
+void sort_list(list<Goat> &trip);
 int main_menu();
 
 int main() {
