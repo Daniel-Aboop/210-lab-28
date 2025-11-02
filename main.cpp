@@ -156,6 +156,8 @@ void remove_duplicates(list<Goat> &trip){
     trip.unique();
 }
 void sort_list(list<Goat> &trip){
-    trip.sort();
+    trip.sort(trip.begin(),trip.end);
+}
+void find_goat(){
     
 }
