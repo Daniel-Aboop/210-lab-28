@@ -18,6 +18,7 @@ void display_trip(list<Goat> trip);
 void reverse_list(list<Goat> &trip);
 void remove_duplicates(list<Goat> &trip);
 void sort_list(list<Goat> &trip);
+void find_goat(list<Goat> &trip);
 int main_menu();
 
 int main() {
@@ -76,7 +77,11 @@ int main() {
             case 6:    
                 cout << "Sorting list.\n";
                 sort_list(trip);
-                break;     
+                break;
+            case 7:    
+                cout<<"Finding goat.\n";
+                find_goat(trip);
+                break;      
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -96,11 +101,12 @@ int main_menu() {
     cout << "[4] Reverse list\n";
     cout << "[5] Remove duplicates\n";
     cout << "[6] Sort List\n";
-    cout << "[7] Quit\n";
+    cout << "[7] Find Goat\n";
+    cout << "[8] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 7) {
+    while (choice < 1 || choice > 8) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -156,8 +162,22 @@ void remove_duplicates(list<Goat> &trip){
     trip.unique();
 }
 void sort_list(list<Goat> &trip){
-    trip.sort(trip.begin(),trip.end);
+    trip.sort();
 }
-void find_goat(){
-    
+void find_goat(list<Goat> &trip){
+    cin.ignore();
+    cout<<"Enter Goat Name: ";
+            string temp;
+            getline(cin,temp);
+            string searchKey = temp;
+            auto it = find(trip.begin(),trip.end(),searchKey);
+            if(it!=trip.end()){
+                cout << "\nFound " << searchKey << "'s Goat details! "<<endl;
+                cout<<"Name: "<<it->get_name()<<endl;
+                cout<<"Age: "<<it->get_age()<<endl;
+                cout<<"Color: "<<it->get_color()<<endl;
+            }
+            else{
+                cout << endl << searchKey << " not found." << endl;
+            }
 }

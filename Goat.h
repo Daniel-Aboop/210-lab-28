@@ -28,7 +28,7 @@ public:
         return name < other.name;
     }
     bool operator==(const Goat &other)const{
-        return age==other.age;
+        return name==other.name;
     }
 };
 
