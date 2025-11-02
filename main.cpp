@@ -19,6 +19,7 @@ void reverse_list(list<Goat> &trip);
 void remove_duplicates(list<Goat> &trip);
 void sort_list(list<Goat> &trip);
 void find_goat(list<Goat> &trip);
+void check_sort(list<Goat> &trip);
 int main_menu();
 
 int main() {
@@ -81,7 +82,11 @@ int main() {
             case 7:    
                 cout<<"Finding goat.\n";
                 find_goat(trip);
-                break;      
+                break;   
+            case 8:    
+                cout<<"Checking if sorted.\n";
+                check_sort(trip);
+                break;     
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -102,11 +107,12 @@ int main_menu() {
     cout << "[5] Remove duplicates\n";
     cout << "[6] Sort List\n";
     cout << "[7] Find Goat\n";
-    cout << "[8] Quit\n";
+    cout << "[8] Check if list is sorted\n";
+    cout << "[9] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 8) {
+    while (choice < 1 || choice > 9) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -156,7 +162,7 @@ int select_goat(list<Goat> trp) {
 }
 // New functions added.
 void reverse_list(list<Goat> &trip){
-    reverse(trip.begin(),trip.end());
+    trip.reverse();
 }
 void remove_duplicates(list<Goat> &trip){
     trip.unique();
@@ -180,4 +186,12 @@ void find_goat(list<Goat> &trip){
             else{
                 cout << endl << searchKey << " not found." << endl;
             }
+}
+void check_sort(list <Goat> &trip){
+    if(is_sorted(trip.begin(),trip.end())){
+        cout<<"List is sorted!"<<endl;
+    }
+    else{
+        cout<<"List is not sorted!"<<endl;
+    }
 }
