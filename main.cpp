@@ -148,7 +148,7 @@ int select_goat(list<Goat> trp) {
     }
     return input;
 }
-
+// New functions added.
 void reverse_list(list<Goat> &trip){
     reverse(trip.begin(),trip.end());
 }
