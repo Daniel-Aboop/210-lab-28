@@ -73,6 +73,10 @@ int main() {
                 cout << "Removing duplicates.\n";
                 remove_duplicates(trip);
                 break; 
+            case 6:    
+                cout << "Sorting list.\n";
+                sort_list(trip);
+                break;     
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -91,11 +95,12 @@ int main_menu() {
     cout << "[3] List goats\n";
     cout << "[4] Reverse list\n";
     cout << "[5] Remove duplicates\n";
-    cout << "[6] Quit\n";
+    cout << "[6] Sort List\n";
+    cout << "[7] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 6) {
+    while (choice < 1 || choice > 7) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -149,4 +154,7 @@ void reverse_list(list<Goat> &trip){
 }
 void remove_duplicates(list<Goat> &trip){
     trip.unique();
+}
+void sort_list(list<Goat> &trip){
+    trip.sort();
 }
